@@ -20,10 +20,10 @@ const GetIntouch = () => {
 
             <div className="px-4 sm:px-8 md:px-16 lg:px-32 py-8 sm:py-12">
                 {/* Heading */}
-                <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center mb-8 flex items-center justify-center gap-2">
+                <p className="text-xl sm:text-3xl md:text-3xl font-extrabold text-center mb-8 flex items-center justify-center gap-2">
                     <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>
                     Get In Touch
-                </h2>
+                </p>
 
                 {/* Form Container */}
                 <div className="bg-[#050941] shadow-lg shadow-[#050941]/50 px-6 sm:px-10 py-6 sm:py-8 rounded-md text-center">
@@ -51,7 +51,7 @@ const GetIntouch = () => {
                         <input
                             type="submit"
                             value="Send"
-                            className="proj-btn bg-#020421-600 text-white font-bold py-3 px-6 rounded-md hover:bg-#020421-900 transition-colors w-full sm:w-[20vh] mx-auto"
+                            className="cursor-pointer proj-btn bg-#020421-600 text-white font-bold py-3 px-6 rounded-md hover:bg-#020421-900 transition-colors w-full sm:w-[20vh] mx-auto"
                         />
                     </form>
                 </div>

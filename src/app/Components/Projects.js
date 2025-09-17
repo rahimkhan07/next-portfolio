@@ -80,13 +80,13 @@ const Projects = () => {
 
         {/* Filter Buttons */}
         <div className="flex gap-4 sm:gap-6">
-          <button onClick={() => setFilter('all')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor:pointer">
+          <button onClick={() => setFilter('all')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor-pointer">
             All
           </button>
-          <button onClick={() => setFilter('frontend')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor: pointer">
+          <button onClick={() => setFilter('frontend')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor-pointer">
             Front-End
           </button>
-          <button onClick={() => setFilter('components')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor: pointer">
+          <button onClick={() => setFilter('components')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor-pointer">
             Components
           </button>
         </div>
