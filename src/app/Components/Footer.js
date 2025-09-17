@@ -12,77 +12,90 @@ const Footer = () => {
       setCurrentDate(new Date());
     }, 100);
 
-    return() => {
+    return () => {
       clearInterval(timer);
     };
-  },[]);
+  }, []);
 
 
-  const formatDate =(date) => {
-    const day = date.getDate().toString().padStart(2,'0');
-    const month = (date.getMonth() + 1).toString().padStart(2,'0');
+  const formatDate = (date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
 
-    return`${day}/${month}/${year}`;
+    return `${day}/${month}/${year}`;
   }
 
 
- 
+
   return (
     <>
-    
-      <div className="gap-10 w-full md:w-10vh lg:w-20vh" >
-        <hr />
-        <footer className=" text-white py-10 px-12">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0" >
-            <div className="text-3xl font-bold p-5">
+
+      <div className="w-full px-4 sm:px-6 lg:px-12" style={{marginBottom:"-15vh"}}>
+        {/* <hr className="border-gray-700 mb-8" /> */}
+
+        <footer className="text-white py-8 sm:py-10">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
+
+            {/* Logo / Brand */}
+            <div className="text-2xl sm:text-3xl font-bold p-2 sm:p-5">
               <Link href="/">
-                <span className="text-white hover:text-gray-300 transition">
-                 <span className="about-badge"></span> R.Khan
+                <span className="text-white hover:text-gray-300 transition flex items-center gap-2">
+                  <span className="about-badge"></span> R.Khan
                 </span>
               </Link>
-
             </div>
-           
-            <div className="text-center p-5">
-              {/* <h2 className="text-lg font-bold mb-2">Quick Links</h2> */}
-              <ul className="space-y-1">
-                <ol><Link href="/About" className="hover:text-gary-300">About</Link></ol>
-                <ol><Link href="/service" className="hover:text-gary-300">Service</Link></ol>
-                <ol><Link href="/contact" className="hover:text-gary-300">Contact</Link></ol>
+
+            {/* Navigation Links */}
+            <div className="text-center p-2 sm:p-5">
+              <ul className="space-y-2 sm:space-y-3">
+                <li>
+                  <Link href="/About" className="hover:text-gray-300 transition">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/service" className="hover:text-gray-300 transition">
+                    Service
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-gray-300 transition">
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            <div className="text-center ">
-              {/* <h2 className="text-lg font-bold mb-2">Social Links</h2> */}
-              <div className="flex gap-8 p-5 y-1" >
-                <a href="https://www.linkedin.com/in/rahim-r72/" target="_blank" rel="nooperener noreferrer" className="hover:text-gray-400">
+            {/* Social Links and Date */}
+            <div className="text-center p-2 sm:p-5 space-y-4">
+              <div className="flex justify-center gap-6 sm:gap-8">
+                <a href="https://www.linkedin.com/in/rahim-r72/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
                   <SiLinkedin size={24} />
                 </a>
-                <a href="https://github.com/rahimkhan07" target="_blank" rel="nooperener noreferrer" className="hover:text-gray-400">
+                <a href="https://github.com/rahimkhan07" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
                   <SiGithub size={24} />
                 </a>
-                <a href="mailto:i.raheem72@gmail.com" className="hover:text-gray-400">
+                <a href="mailto:i.raheem72@gmail.com" className="hover:text-gray-400 transition">
                   <SiGmail size={24} />
                 </a>
-                <a href="" className="hover:text-gray-400">
+                <a href="#" className="hover:text-gray-400 transition">
                   <SiX size={24} />
                 </a>
               </div>
-              <div className="date">
+              <div className="text-sm text-gray-400">
                 Date: {formatDate(currentDate)}
               </div>
             </div>
-
-
           </div>
-
-          <div className="copyright text-center bg-gray-800 p-3 my-12">
-            <h2>designed by: RAHIM</h2>
+ 
+          {/* Copyright */}
+          <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+            © 2025 Rahim. All rights reserved.
           </div>
         </footer>
-
       </div>
+
     </>
   )
 }

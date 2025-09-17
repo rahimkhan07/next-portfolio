@@ -24,20 +24,20 @@ const Navbar = () => {
     // }, [isWhiteTheme])
 
     
-  const [animate, setAnimate] = useState(false);
+//   const [animate, setAnimate] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 100); // Delay so the animation triggers after mount
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setAnimate(true);
+//     }, 100); // Delay so the animation triggers after mount
 
-    return () => clearTimeout(timer);
-  }, []);
+//     return () => clearTimeout(timer);
+//   }, []);
 
 
     return (
         <>
-            <div className='header '>
+            <div className='header'>
                  <nav>
                     {/* <div>RK</div> */}
                     <ul>

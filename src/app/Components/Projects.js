@@ -21,7 +21,7 @@ const Projects = () => {
       id: 2,
       title: 'Weather App',
       image: '/weather.png',
-      viewUrl: 'https://example.com/mongodb',
+      viewUrl: 'https://68486c686b967ddbecd17e4c--stellar-treacle-0c5183.netlify.app/',
       githubUrl: 'https://github.com/yourname/mongodb-dashboard',
     },
     {
@@ -67,23 +67,35 @@ const Projects = () => {
 
   return (
     <>
-      <br /> <br /> <br />
-      <div className='mt-82 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] md:mt-[60vh]'>
-        <h1 className="text-3xl font-bold mb-2 "><span className="about-badge"></span> My Projects</h1>
-        <small>My Recent Work</small>
 
+      <div className="mt-[130vh] md:mt-[105vh] grid grid-rows-[auto_auto_auto_1fr] items-center justify-items-center min-h-screen p-4 sm:p-8 md:p-16 pb-20 gap-8 sm:gap-12 font-[family-name:var(--font-geist-sans)]">
 
-        {/* Filter Buttons */}
-        <div className="project-btns">
-          <button onClick={() => setFilter('all')} className="btns">All</button>
-          <button onClick={() => setFilter('frontend')} className="btns">Front-End</button>
-          <button onClick={() => setFilter('components')} className="btns">Components</button>
+        {/* Heading */}
+        <div>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-2">
+            <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>
+            My Projects
+          </h1>
         </div>
 
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Filter Buttons */}
+        <div className="flex gap-4 sm:gap-6">
+          <button onClick={() => setFilter('all')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor:pointer">
+            All
+          </button>
+          <button onClick={() => setFilter('frontend')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor: pointer">
+            Front-End
+          </button>
+          <button onClick={() => setFilter('components')} className="btns px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition cursor: pointer">
+            Components
+          </button>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 w-full">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="cards rounded-lg shadow-md overflow-hidden">
-              <div className="relative h-50 w-80">
+            <div key={project.id} className="cards bg-[#0a0a23] rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+              <div className="relative h-48 w-full">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -92,26 +104,25 @@ const Projects = () => {
                 />
               </div>
               <div className="p-4">
-                <h2 className="text-xl font-semibold mb-3">{project.title}</h2>
-                <div className="flex gap-3">
+                <h2 className="text-lg sm:text-xl font-semibold mb-3 text-white">{project.title}</h2>
+                <div className="flex gap-4">
                   <Link
                     href={project.viewUrl}
-                    className="proj-btn"
+                    className="proj-btn p-2 bg-blue-600 rounded hover:bg-blue-700 transition"
                   >
-                    <FiExternalLink size={25} />
+                    <FiExternalLink size={20} color="white" />
                   </Link>
                   <Link
                     href={project.githubUrl}
-                    className="proj-btn"
+                    className="proj-btn p-2 bg-gray-800 rounded hover:bg-gray-700 transition"
                   >
-                    <SiGithub size={25} />
+                    <SiGithub size={20} color="white" />
                   </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
 
     </>

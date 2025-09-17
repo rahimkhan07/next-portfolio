@@ -34,7 +34,7 @@ const page = () => {
             </p>
             <br />
             <h3><strong><span className="about-badge"></span>Aslo You Can Find Me On:</strong> </h3>
-            <div className="abot-icon mx-6">
+            <div className="flex items-center gap-6">
               <a href="https://github.com/rahimkhan07"><SiGithub size={25}   className='hover:text-gray-400 cursor-pointer my-[2vh] ' /></a> 
               <a href="https://www.linkedin.com/in/rahim-r72/"><SiLinkedin size={25}   className='hover:text-gray-400 cursor-pointer my-[2vh]' /></a> 
               <a href="mailto:i.raheem72@gmail.com"><SiX size={25} className='hover:text-gray-400 cursor-pointer my-[2vh]' /></a> 

@@ -5,8 +5,8 @@ import { SiNextdotjs, SiReact, SiNodedotjs, SiFirebase, SiJavascript, SiMysql, S
 const Skill = () => {
     return (
         <>
-            <div className="showcase skill-container ">
-                <h1><span className="about-badge"></span> Professional Skillset</h1> <br />
+            {/* <div className="skill-container">
+                <h1><span className="about-badge py-10"></span> Professional Skillset</h1> <br />
                 <div className="skill-box">
                     <div className="skill hover:mt-[-2px]">
                         <SiReact size={40} color="#61DBFB" />
@@ -37,10 +37,7 @@ const Skill = () => {
                         <SiPhp size={40} color='#777BB4' />
                         <h2>php</h2>
                     </div>
-                    {/* <div className="skill hover:mt-[-2px]">
-                        <SiBootstrap size={40} color='#7952B3' />
-                        <h2>Bootstrap</h2>
-                    </div> */}
+                    
                     
                 </div> <br />
 
@@ -79,7 +76,58 @@ const Skill = () => {
 
 
 
+            </div> */}
+
+            <div className="px-4 py-10 sm:px-6 lg:px-20 max-w-7xl mx-auto" style={{ marginTop: "100vh" }}>
+                {/* Professional Skillset Heading */}
+                <h1 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mb-8 flex items-center justify-center gap-2">
+                    <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>
+                    Professional Skillset
+                </h1>
+
+                {/* Skills Grid */}
+                <div className="flex flex-wrap justify-center items-center gap-6 p-6 ">
+                    {[
+                        { icon: <SiReact size={40} color="#61DBFB" />, label: "ReactJS" },
+                        { icon: <SiNextdotjs size={40} color="white" />, label: "NextJS" },
+                        { icon: <SiJavascript size={40} color="yellow" />, label: "JavaScript" },
+                        { icon: <SiNodedotjs size={40} color="green" />, label: "NodeJS" },
+                        { icon: <SiMysql size={40} color="#00758F" />, label: "MySQL" },
+                        { icon: <SiPhp size={40} color="#777BB4" />, label: "PHP" },
+                        { icon: <SiTailwindcss size={40} color="#38BDF8" />, label: "Tailwind" },
+                        { icon: <SiHtml5 size={40} color="#E34F26" />, label: "HTML" },
+                        { icon: <SiCss3 size={40} color="#1572B6" />, label: "CSS" },
+                    ].map((tech, index) => (
+                        <div key={index} className="flex flex-col items-center  p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                            {tech.icon}
+                            <p className="text-white mt-2 text-sm sm:text-base">{tech.label}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Tools Heading */}
+                <h1 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mt-12 mb-6 flex items-center justify-center gap-2">
+                    <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>
+                    Tools I Use
+                </h1>
+
+                {/* Tools Grid */}
+                <div className="flex flex-wrap justify-center items-center gap-6 p-6 ">
+                    {[
+                        { icon: <SiGithub size={40} color="white" />, label: "GitHub" },
+                        { icon: <SiFirebase size={40} color="#FFCA28" />, label: "Firebase" },
+                        { icon: <SiMongodb size={40} color="#47A248" />, label: "MongoDB" },
+                    ].map((tool, index) => (
+                        <div key={index} className="flex flex-col items-center  p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                            {tool.icon}
+                            <p className="text-white mt-2 text-sm sm:text-base">{tool.label}</p>
+                        </div>
+                    ))}
+                </div>
+
             </div>
+
+
         </>
     )
 }
