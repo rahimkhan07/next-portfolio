@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { SiGithub, SiLinkedin, SiX } from 'react-icons/si'
+import Image from 'next/image'
 
 
 
@@ -42,7 +43,8 @@ const page = () => {
 
           </div>
           <div className="item-center px-[22vh]" >
-            <img src="img2.jpg" alt="" width={"270vh"} style={{ borderRadius: "2vh" }} />
+            
+            <Image src="img2.jpg" alt="" width={"270vh"} style={{ borderRadius: "2vh" }} />
           </div>
         </div>
         <br />

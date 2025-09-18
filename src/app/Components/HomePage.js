@@ -65,7 +65,7 @@ const HomePage = () => {
     </small>
 
     <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-      Hi, I'm <span className="hover:text-blue-400 text-blue-300">RAHIM</span>
+      I&apos;m Rahim<span className="hover:text-blue-400 text-blue-300">RAHIM</span>
     </h3>
 
     <p className="text-base sm:text-lg text-gray-400 mb-6 px-2 sm:px-0">
