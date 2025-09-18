@@ -1,6 +1,32 @@
 import React from 'react'
 
 const GetIntouch = () => {
+ 
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "62b155bb-f6d1-4f1a-ad88-4c1cf7047056");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
     return (
         <>
             {/* <h1 style={{ fontSize: "5vh", fontWeight: "bolder", textAlign:"center"}}><span className="about-badge"></span> Get In Touch</h1>
@@ -32,20 +58,23 @@ const GetIntouch = () => {
                         <small className="text-gray-300">Write your query here:</small>
                     </div>
 
-                    <form className="flex flex-col gap-4 sm:gap-6">
+                    <form onSubmit={onSubmit} className="flex flex-col gap-4 sm:gap-6">
                         <input
                             type="text"
                             placeholder="Enter your name"
+                            name='name'
                             className="p-3 rounded-md bg-#020421 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         <input
                             type="tel"
                             placeholder="Phone number"
+                            name='phone'
                             className="p-3 rounded-md bg-#020421 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         <input
                             type="text"
                             placeholder="Enter your query"
+                            name='query'
                             className="p-3 rounded-md bg-#020421 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         <input
@@ -54,6 +83,7 @@ const GetIntouch = () => {
                             className="cursor-pointer proj-btn bg-#020421-600 text-white font-bold py-3 px-6 rounded-md hover:bg-#020421-900 transition-colors w-full sm:w-[20vh] mx-auto"
                         />
                     </form>
+                    <span>{result}</span>
                 </div>
             </div>
 

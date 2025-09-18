@@ -8,6 +8,7 @@ import GetIntouch from "./Components/GetIntouch";
 import Footer from "./Components/Footer";
 import { useEffect, useState } from "react";
 import Loader from "./Components/Loader";
+import Service from "./Service/page";
 // import Loader from "./Components/Loader";
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
       <Navbar className="navbar-r" />
       <HomePage/>
       <Skill/> 
+      <Service />
       <Projects/> 
       <GetIntouch/>
       <Footer/>
