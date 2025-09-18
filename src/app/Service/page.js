@@ -39,13 +39,16 @@ const services = [
 
 export default function Services() {
     return (
-        <> <br /> <br /> <br /> <br />
-            <div style={{marginBottom:"-20vh"}} className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-0 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] scroll-smooth">
-                {/* <Navbar className="navbar-r" /> */}
+        <>
+            <div className="grid grid-rows-[0rem_1fr_0px] items-center justify-items-center min-h-screen  pb-0 font-[family-name:var(--font-geist-sans)] scroll-smooth">
+                
                 <section className=" text-white py-16 px-6 md:px-20">
+                    <Navbar className="navbar-r" />
                     {/* Heading */}
                     <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12">
-                        Our <span className="text-cyan-400">Services</span>
+                        Our Services
+                        <span className="w-2 h-10 bg-blue-800 rounded-l-md"> </span>
+                        
                     </h2>
 
                     {/* Cards */}
