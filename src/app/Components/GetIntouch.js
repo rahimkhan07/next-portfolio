@@ -1,92 +1,117 @@
 import React from 'react'
+import Navbar from './Navbar';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, MessageCircle } from "lucide-react";
 
 const GetIntouch = () => {
- 
-  const [result, setResult] = React.useState("");
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+    const [result, setResult] = React.useState("");
 
-    formData.append("access_key", "62b155bb-f6d1-4f1a-ad88-4c1cf7047056");
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+        formData.append("access_key", "62b155bb-f6d1-4f1a-ad88-4c1cf7047056");
 
-    const data = await response.json();
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
+        const data = await response.json();
+
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            console.log("Error", data);
+            setResult(data.message);
+        }
+    };
 
     return (
         <>
-            {/* <h1 style={{ fontSize: "5vh", fontWeight: "bolder", textAlign:"center"}}><span className="about-badge"></span> Get In Touch</h1>
-            <div className="px-[12vh] py-[2vh]" style={{ boxShadow: "-1px 0px 11px 7px #050941", textAlign:"center" }}>
-                
-                
-                <div className="get-conn py-[2vh]">
-                    <small>write your query here-</small> <br /> <br />
-                    <form action="">
-                        <input type="text" placeholder='Enter your name' /> <br />
-                        <input type="phone" placeholder='phone number' /> <br />
-                        <input type="text" placeholder='Enter your Query' /> <br />
-                        <input type="submit" className='proj-btn' style={{ width: "20vh" }} value="Send" />
-                    </form>
-                </div>
-            </div> */}
+            <div className="grid grid-rows-[15rem_1fr_20px] items-center justify-items-center min-h-screen p-4 sm:p-8 lg:p-20 gap-10 font-[family-name:var(--font-geist-sans)] scroll-smooth">
 
-            <div className="px-4 sm:px-8 md:px-16 lg:px-32 py-8 sm:py-12">
-                {/* Heading */}
-                <p className="text-xl sm:text-3xl md:text-3xl font-extrabold text-center mb-8 flex items-center justify-center gap-2">
-                    <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>
-                    Get In Touch
-                </p>
+                <section className="text-white w-full">
+                    {/* Title */}
+                    <div className="flex justify-center p-6 sm:p-8 ">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-2 text-center">
+                            <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>
+                            Contact
+                        </h1>
+                    </div> <br /> <br />
 
-                {/* Form Container */}
-                <div className="bg-[#050941] shadow-lg shadow-[#050941]/50 px-6 sm:px-10 py-6 sm:py-8 rounded-md text-center">
+                    {/* Grid Layout: Left (Contact Info) | Right (Form) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-                    <div className="get-conn mb-6">
-                        <small className="text-gray-300">Write your query here:</small>
+                        {/* Left - Contact Info */}
+                        <div className="flex flex-col items-center md:items-start gap-6">
+                            <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row flex-wrap justify-center md:justify-start gap-6">
+                                {/* Email */}
+                                <div className="flex items-center gap-3 bg-[#020421] px-6 py-3 rounded-md shadow-lg shadow-blue-500/40 w-full sm:w-auto">
+                                    <Mail className="text-white" size={20} />
+                                    <span className="text-gray-300 text-sm sm:text-base">i.raheem727@gmail.com</span>
+                                </div>
+
+                                {/* Phone */}
+                                <div className="flex items-center gap-3 bg-[#020421] px-6 py-3 rounded-md shadow-lg shadow-blue-500/40 w-full sm:w-auto">
+                                    <Phone className="text-white" size={20} />
+                                    <span className="text-gray-300 text-sm sm:text-base">(+91) 7275138280</span>
+                                </div>
+                            </div>
+
+                            {/* Location */}
+                            <div className="flex items-center gap-3 bg-[#020421] px-6 py-3 rounded-md shadow-lg shadow-blue-500/40 w-full sm:w-auto">
+                                <MapPin className="text-white" size={20} />
+                                <span className="text-gray-300 text-sm sm:text-base">Lucknow, Uttar Pradesh, India</span>
+                            </div>
+
+                            {/* Social Icons */}
+                            <div className="flex justify-center md:justify-start gap-6 mt-6 border-t border-white pt-6 w-full">
+                                <a href="#" className="hover:text-blue-500 transition"><Facebook size={22} /></a>
+                                <a href="#" className="hover:text-blue-500 transition"><Twitter size={22} /></a>
+                                <a href="#" className="hover:text-blue-500 transition"><Linkedin size={22} /></a>
+                                <a href="#" className="hover:text-blue-500 transition"><MessageCircle size={22} /></a>
+                            </div>
+                        </div>
+
+                        {/* Right - Form */}
+                        <div className="bg-[#050941] shadow-lg shadow-[#050941]/50 px-4 sm:px-8 py-6 sm:py-8 rounded-md text-center w-full">
+                            <div className="get-conn mb-6">
+                                <small className="text-gray-300 text-sm sm:text-base">Write your query here</small>
+                            </div>
+
+                            <form onSubmit={onSubmit} className="flex flex-col gap-4 sm:gap-6">
+                                <input
+                                    type="text"
+                                    placeholder="Enter your name"
+                                    name="name"
+                                    className="p-3 rounded-md bg-[#020421] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                                />
+                                <input
+                                    type="tel"
+                                    placeholder="Phone number"
+                                    name="phone"
+                                    className="p-3 rounded-md bg-[#020421] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Enter your query"
+                                    name="query"
+                                    className="p-3 rounded-md bg-[#020421] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                                />
+                                <input
+                                    type="submit"
+                                    value="Send"
+                                    className="cursor-pointer bg-blue-600 text-white font-bold py-3 px-6 rounded-md hover:bg-blue-800 transition-colors w-full sm:w-[200px] mx-auto"
+                                />
+                            </form>
+                            <span className="block mt-4 text-gray-400">{result}</span>
+                        </div>
                     </div>
-
-                    <form onSubmit={onSubmit} className="flex flex-col gap-4 sm:gap-6">
-                        <input
-                            type="text"
-                            placeholder="Enter your name"
-                            name='name'
-                            className="p-3 rounded-md bg-#020421 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                        <input
-                            type="tel"
-                            placeholder="Phone number"
-                            name='phone'
-                            className="p-3 rounded-md bg-#020421 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Enter your query"
-                            name='query'
-                            className="p-3 rounded-md bg-#020421 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                        <input
-                            type="submit"
-                            value="Send"
-                            className="cursor-pointer proj-btn bg-#020421-600 text-white font-bold py-3 px-6 rounded-md hover:bg-#020421-900 transition-colors w-full sm:w-[20vh] mx-auto"
-                        />
-                    </form>
-                    <span>{result}</span>
-                </div>
+                </section>
             </div>
-
         </>
     )
 }
