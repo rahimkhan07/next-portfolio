@@ -46,13 +46,27 @@ const HomePage = () => {
   
   {/* Image Section */}
   <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-    <Image 
-      src="/img2.jpg" 
-      alt="Rahim" 
-      width={250} 
-      height={200} 
-      className="rounded-lg shadow-lg object-cover"
-    />
+    <Link href="/Gallery" className="relative group block w-[250px]">
+      <Image 
+        src="/img2.jpg" 
+        alt="Rahim" 
+        width={250} 
+        height={200} 
+        className="rounded-lg shadow-lg object-cover w-full"
+      />
+      {/* Diary badge overlay */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent
+                      rounded-b-lg px-4 py-3 flex items-center justify-between
+                      group-hover:from-blue-900/80 transition-all duration-300">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+          <span className="text-white text-sm font-semibold tracking-wide">Rahim&apos;s Diary</span>
+        </div>
+        <span className="text-blue-300 text-xs font-medium group-hover:translate-x-1 transition-transform duration-200">
+          View →
+        </span>
+      </div>
+    </Link>
   </div>
 
   {/* Content Section */}
