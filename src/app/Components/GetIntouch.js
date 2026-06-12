@@ -30,8 +30,8 @@ const GetIntouch = () => {
     };
 
     return (
-        <> <br /> <br /> <br /> <br />
-            <div className="grid grid-rows-[15rem_1fr_20px] items-center justify-items-center min-h-screen p-4 sm:p-18 lg:p-20 gap-10 font-[family-name:var(--font-geist-sans)] scroll-smooth">
+        <>
+            <div className="items-center justify-items-center p-4 sm:p-10 lg:p-20 font-[family-name:var(--font-geist-sans)] scroll-smooth">
 
                 <section className="text-white w-full">
                     {/* Title */}

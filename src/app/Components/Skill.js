@@ -78,7 +78,7 @@ const Skill = () => {
 
             </div> */}
 
-            <div className="px-4 py-10 sm:px-6 lg:px-20 max-w-7xl mx-auto" style={{ marginTop: "100vh" }}>
+            <div className="px-4 py-10 sm:px-6 lg:px-20 max-w-7xl mx-auto">
                 {/* Professional Skillset Heading */}
                 <h1 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mb-8 flex items-center justify-center gap-2">
                     <span className="w-2 h-10 bg-blue-800 rounded-l-md"></span>

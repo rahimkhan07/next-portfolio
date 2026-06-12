@@ -16,9 +16,8 @@ import Navbar from "../Components/Navbar";
 export default function Contact() {
     return (
         <>
-            <div className="grid grid-rows-[1rem_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] scroll-smooth" >
-
-                <Navbar className="navbar-r" />
+            <Navbar className="navbar-r" />
+            <div className="pt-24 min-h-screen px-4 sm:px-8 lg:px-20 pb-20 font-[family-name:var(--font-geist-sans)] scroll-smooth">
                 <section className=" text-white py-1 px-6">
                     {/* Title */}
                     <div className="flex justify-center p-8">

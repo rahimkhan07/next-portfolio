@@ -42,7 +42,7 @@ import { SiX } from 'react-icons/si'
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-around min-h-screen  px-4 sm:px-6 lg:px-12 py-8" style={{ marginTop: "-10vh" }}>
+    <div className="flex flex-col md:flex-row items-center justify-around min-h-screen px-4 sm:px-6 lg:px-12 py-8">
   
   {/* Image Section */}
   <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">

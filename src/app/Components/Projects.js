@@ -68,7 +68,7 @@ const Projects = () => {
   return (
     <>
 
-      <div className="mt-[130vh] md:mt-[105vh] grid grid-rows-[auto_auto_auto_1fr] items-center justify-items-center min-h-screen p-4 sm:p-8 md:p-16 pb-20 gap-8 sm:gap-12 font-[family-name:var(--font-geist-sans)]">
+      <div className="grid grid-rows-[auto_auto_auto_1fr] items-center justify-items-center p-4 sm:p-8 md:p-16 pb-20 gap-8 sm:gap-12 font-[family-name:var(--font-geist-sans)]">
 
         {/* Heading */}
         <div>
