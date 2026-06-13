@@ -141,7 +141,7 @@ export default function Services() {
                   In Pipeline
                 </span>
                 <span className="text-xs text-[var(--text-muted)] bg-white/5 px-3 py-1.5 rounded-full border border-[var(--border)]">
-                  Launching Q3 2025
+                  Launching Soon 
                 </span>
               </div>
 
