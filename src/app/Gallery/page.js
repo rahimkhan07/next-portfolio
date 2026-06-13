@@ -73,7 +73,7 @@ export default function GalleryPage() {
   const current = thoughts[thoughtIdx];
 
   return (
-    <div className="min-h-screen bg-[#020421] text-white font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-[family-name:var(--font-geist-sans)]">
       <Navbar />
 
       {/* ── Hero ── */}
@@ -84,14 +84,14 @@ export default function GalleryPage() {
             Rahim&apos;s <span className="text-blue-400">Diary</span>
           </h1>
         </div>
-        <p className="text-gray-500 text-sm max-w-sm mx-auto">
+        <p className="text-[var(--text-muted)] text-sm max-w-sm mx-auto">
           Moments, places & memories — captured through my lens.
         </p>
       </section>
 
       {/* ── Motivational Thought ── */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 py-8">
-        <div className="relative bg-gradient-to-r from-[#07093a] via-[#050941] to-[#07093a] border border-blue-800/40 rounded-2xl px-6 sm:px-10 py-6 overflow-hidden shadow-lg shadow-blue-900/20">
+        <div className="relative bg-gradient-to-r from-[#07093a] via-[#050941] to-[#07093a] border border-[var(--border)] rounded-2xl px-6 sm:px-10 py-6 overflow-hidden shadow-lg shadow-blue-900/20">
           {/* big faint quote icon */}
           <Quote size={80} className="absolute -top-3 -left-2 text-blue-900/30 pointer-events-none" />
           <Quote size={80} className="absolute -bottom-3 -right-2 text-blue-900/20 pointer-events-none rotate-180" />
@@ -133,7 +133,7 @@ export default function GalleryPage() {
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200
                 ${active === cat
                   ? "bg-blue-600 text-white shadow shadow-blue-500/40 scale-105"
-                  : "bg-[#050941] text-gray-400 hover:text-white hover:bg-blue-800/40 border border-blue-900/40"
+                  : "bg-[var(--bg-card)] text-[var(--text-muted)] hover:text-white hover:bg-blue-800/40 border border-[var(--border)]"
                 }`}
             >
               {cat}
@@ -253,3 +253,4 @@ export default function GalleryPage() {
     </div>
   );
 }
+

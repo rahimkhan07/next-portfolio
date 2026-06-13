@@ -1,102 +1,63 @@
 "use client"
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { SiGit, SiGithub, SiLinkedin, SiGmail, SiX, SiDatefns } from 'react-icons/si'
+import { SiGithub, SiLinkedin, SiGmail, SiX } from 'react-icons/si'
 
 const Footer = () => {
-
   const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 100);
-
-    return () => {
-      clearInterval(timer);
-    };
+    const timer = setInterval(() => setCurrentDate(new Date()), 1000);
+    return () => clearInterval(timer);
   }, []);
 
-
   const formatDate = (date) => {
-    const day = date.getDate().toString().padStart(2, '0');
+    const day   = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-
+    const year  = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
 
-
-
   return (
-    <>
+    <footer className="w-full border-t border-[var(--border)] mt-8 px-4 sm:px-6 lg:px-12 py-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 
-      <div className="w-full px-4 sm:px-6 lg:px-12" style={{marginBottom:"-15vh"}}>
-        {/* <hr className="border-gray-700 mb-8" /> */}
+        {/* Brand */}
+        <div className="text-2xl sm:text-3xl font-bold">
+          <Link href="/"
+            className="text-[var(--text-primary)] hover:text-blue-400 transition flex items-center gap-2">
+            R.Khan
+          </Link>
+        </div>
 
-        <footer className="text-white py-8 sm:py-10">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
+        {/* Links */}
+        <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-[var(--text-muted)]">
+          {[['About', '/About'], ['Services', '/Service'], ['Contact', '/Contact'], ['Blog', '/Blog']].map(([label, href]) => (
+            <li key={href}>
+              <Link href={href} className="hover:text-blue-400 transition">{label}</Link>
+            </li>
+          ))}
+        </ul>
 
-            {/* Logo / Brand */}
-            <div className="text-2xl sm:text-3xl font-bold p-2 sm:p-5">
-              <Link href="/">
-                <span className="text-white hover:text-gray-300 transition flex items-center gap-2">
-                  <span className="about-badge"></span> R.Khan
-                </span>
-              </Link>
-            </div>
-
-            {/* Navigation Links */}
-            <div className="text-center p-2 sm:p-5">
-              <ul className="space-y-2 sm:space-y-3">
-                <li>
-                  <Link href="/About" className="hover:text-gray-300 transition">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/Service" className="hover:text-gray-300 transition">
-                    Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/Contact" className="hover:text-gray-300 transition">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Social Links and Date */}
-            <div className="text-center p-2 sm:p-5 space-y-4">
-              <div className="flex justify-center gap-6 sm:gap-8">
-                <a href="https://www.linkedin.com/in/rahim-r72/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-                  <SiLinkedin size={24} />
-                </a>
-                <a href="https://github.com/rahimkhan07" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-                  <SiGithub size={24} />
-                </a>
-                <a href="mailto:i.raheem72@gmail.com" className="hover:text-gray-400 transition">
-                  <SiGmail size={24} />
-                </a>
-                <a href="#" className="hover:text-gray-400 transition">
-                  <SiX size={24} />
-                </a>
-              </div>
-              <div className="text-sm text-gray-400">
-                Date: {formatDate(currentDate)}
-              </div>
-            </div>
+        {/* Social + date */}
+        <div className="flex flex-col items-center gap-3">
+          <div className="flex gap-5">
+            <a href="https://www.linkedin.com/in/rahim-r72/" target="_blank" rel="noopener noreferrer"
+              className="text-[var(--text-muted)] hover:text-blue-400 transition"><SiLinkedin size={22} /></a>
+            <a href="https://github.com/rahimkhan07" target="_blank" rel="noopener noreferrer"
+              className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition"><SiGithub size={22} /></a>
+            <a href="mailto:i.raheem72@gmail.com"
+              className="text-[var(--text-muted)] hover:text-red-400 transition"><SiGmail size={22} /></a>
+            <a href="#" className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition"><SiX size={22} /></a>
           </div>
- 
-          {/* Copyright */}
-          <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
-            © 2025 Rahim. All rights reserved.
-          </div>
-        </footer>
+          <span className="text-xs text-[var(--text-muted)]">{formatDate(currentDate)}</span>
+        </div>
       </div>
 
-    </>
+      <div className="mt-8 text-center text-xs text-[var(--text-muted)]">
+        © 2025 Rahim Khan. All rights reserved.
+      </div>
+    </footer>
   )
 }
 

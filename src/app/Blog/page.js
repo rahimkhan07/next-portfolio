@@ -80,7 +80,7 @@ const categoryColors = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#020421] text-white font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-[family-name:var(--font-geist-sans)]">
       <Navbar />
 
       {/* ── Hero Banner ── */}
@@ -89,7 +89,7 @@ export default function BlogPage() {
           <span className="w-2 h-14 bg-blue-700 rounded-l-md inline-block"></span>
           Blog
         </h1>
-        <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
+        <p className="text-[var(--text-muted)] text-base sm:text-lg max-w-xl mx-auto">
           Thoughts, tutorials, and insights on web development, design, and everything in between.
         </p>
       </section>
@@ -101,7 +101,7 @@ export default function BlogPage() {
             <span
               key={cat}
               className="px-4 py-1.5 rounded-full text-sm font-medium cursor-pointer
-                         bg-[#050941] text-gray-300 hover:bg-blue-700 hover:text-white
+                         bg-[var(--bg-card)] text-[var(--text-muted)] hover:bg-blue-700 hover:text-white
                          transition-colors duration-200"
             >
               {cat}
@@ -112,7 +112,7 @@ export default function BlogPage() {
 
       {/* ── Featured Post ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pb-12">
-        <div className="rounded-2xl overflow-hidden bg-[#050941] shadow-lg shadow-blue-800/30
+        <div className="rounded-2xl overflow-hidden bg-[var(--bg-card)] shadow-lg shadow-blue-800/30
                         flex flex-col md:flex-row">
           <div className="relative w-full md:w-1/2 h-56 sm:h-72 md:h-auto">
             <Image
@@ -128,8 +128,8 @@ export default function BlogPage() {
               {posts[0].category}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold mb-3">{posts[0].title}</h2>
-            <p className="text-gray-400 text-sm sm:text-base mb-6">{posts[0].excerpt}</p>
-            <div className="flex items-center justify-between text-xs text-gray-500">
+            <p className="text-[var(--text-muted)] text-sm sm:text-base mb-6">{posts[0].excerpt}</p>
+            <div className="flex items-center justify-between text-xs text-[var(--text-muted)]">
               <span>{posts[0].date}</span>
               <span>{posts[0].readTime}</span>
             </div>
@@ -153,7 +153,7 @@ export default function BlogPage() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="bg-[#050941] rounded-xl overflow-hidden shadow shadow-blue-800/20
+              className="bg-[var(--bg-card)] rounded-xl overflow-hidden shadow shadow-blue-800/20
                          hover:scale-[1.02] hover:shadow-blue-600/30 transition-all duration-300
                          flex flex-col"
             >
@@ -176,16 +176,16 @@ export default function BlogPage() {
                   >
                     {post.category}
                   </span>
-                  <span className="text-xs text-gray-500">{post.readTime}</span>
+                  <span className="text-xs text-[var(--text-muted)]">{post.readTime}</span>
                 </div>
 
                 <h3 className="text-base sm:text-lg font-bold mb-2 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-400 text-sm flex-1 line-clamp-3">{post.excerpt}</p>
+                <p className="text-[var(--text-muted)] text-sm flex-1 line-clamp-3">{post.excerpt}</p>
 
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-blue-900/40">
-                  <span className="text-xs text-gray-500">{post.date}</span>
+                <div className="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border)]">
+                  <span className="text-xs text-[var(--text-muted)]">{post.date}</span>
                   <button className="text-blue-400 hover:text-blue-300 text-sm font-medium transition">
                     Read more →
                   </button>
@@ -197,17 +197,17 @@ export default function BlogPage() {
       </section>
 
       {/* ── Newsletter CTA ── */}
-      <section className="bg-[#050941] py-14 px-4">
+      <section className="bg-[var(--bg-card)] py-14 px-4">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">Stay in the loop</h2>
-          <p className="text-gray-400 mb-6 text-sm sm:text-base">
+          <p className="text-[var(--text-muted)] mb-6 text-sm sm:text-base">
             Subscribe to get the latest articles delivered straight to your inbox.
           </p>
           <form className="flex flex-col sm:flex-row gap-3 justify-center">
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 bg-[#020421] text-white placeholder-gray-500 px-4 py-3
+              className="flex-1 bg-[var(--bg-primary)] text-white placeholder-gray-500 px-4 py-3
                          rounded-lg border border-blue-900 focus:outline-none focus:ring-2
                          focus:ring-blue-600"
             />
@@ -226,3 +226,4 @@ export default function BlogPage() {
     </div>
   )
 }
+

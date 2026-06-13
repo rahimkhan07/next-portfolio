@@ -72,7 +72,7 @@ export default function Services() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-[#020421] text-white font-[family-name:var(--font-geist-sans)]">
+      <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] font-[family-name:var(--font-geist-sans)]">
 
         {/* ── Page Hero ── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-32 pb-10 text-center">
@@ -80,7 +80,7 @@ export default function Services() {
             <span className="w-2 h-14 bg-blue-700 rounded-l-md inline-block" />
             What I Offer
           </h1>
-          <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="text-[var(--text-muted)] text-base sm:text-lg max-w-xl mx-auto">
             Practical, results-driven services to help you build, grow, and scale your online presence.
           </p>
         </section>
@@ -91,15 +91,15 @@ export default function Services() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="bg-[#050941] border border-blue-900/40 rounded-2xl p-7
+                className="bg-[var(--bg-card)] border border-[var(--border)] rounded-2xl p-7
                            hover:border-blue-600/60 hover:shadow-lg hover:shadow-blue-700/20
                            hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-[#0a0f3c] p-3 rounded-xl shrink-0">{service.icon}</div>
+                  <div className="bg-[var(--bg-card2)] p-3 rounded-xl shrink-0">{service.icon}</div>
                   <h3 className="text-lg sm:text-xl font-bold">{service.title}</h3>
                 </div>
-                <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-5">
+                <p className="text-[var(--text-muted)] text-sm sm:text-base leading-relaxed mb-5">
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -124,7 +124,7 @@ export default function Services() {
           </div>
 
           {/* Main card */}
-          <div className="relative rounded-3xl overflow-hidden border border-blue-800/50
+          <div className="relative rounded-3xl overflow-hidden border border-[var(--border)]
                           bg-gradient-to-br from-[#07093a] via-[#050941] to-[#020421]">
 
             {/* Decorative blobs */}
@@ -140,7 +140,7 @@ export default function Services() {
                   <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
                   In Pipeline
                 </span>
-                <span className="text-xs text-gray-500 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+                <span className="text-xs text-[var(--text-muted)] bg-white/5 px-3 py-1.5 rounded-full border border-[var(--border)]">
                   Launching Q3 2025
                 </span>
               </div>
@@ -151,7 +151,7 @@ export default function Services() {
                   NAK
                   <span className="text-blue-500">-Digital</span>
                 </h3>
-                <p className="text-gray-400 text-base sm:text-lg font-medium tracking-wide">
+                <p className="text-[var(--text-muted)] text-base sm:text-lg font-medium tracking-wide">
                   Your Growth. Our Mission.
                 </p>
               </div>
@@ -161,7 +161,7 @@ export default function Services() {
 
                 {/* Left — description + stats */}
                 <div>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+                  <p className="text-[var(--text-muted)] text-sm sm:text-base leading-relaxed mb-8">
                     NAK-Digital is a full-service digital agency built to help businesses establish
                     and grow their online presence. We pair sharp development skills with performance
                     marketing to deliver outcomes that actually move the needle — not just deliverables.
@@ -172,7 +172,7 @@ export default function Services() {
                     {stats.map((s) => (
                       <div key={s.label} className="flex flex-col">
                         <span className="text-2xl font-extrabold text-white">{s.value}</span>
-                        <span className="text-xs text-gray-500 mt-0.5">{s.label}</span>
+                        <span className="text-xs text-[var(--text-muted)] mt-0.5">{s.label}</span>
                       </div>
                     ))}
                   </div>
@@ -186,12 +186,12 @@ export default function Services() {
                   <ul className="space-y-4">
                     {nakOfferings.map((item, i) => (
                       <li key={i} className="flex items-start gap-4 group">
-                        <div className="mt-0.5 bg-[#0a0f3c] p-2 rounded-lg shrink-0 group-hover:bg-blue-800/40 transition">
+                        <div className="mt-0.5 bg-[var(--bg-card2)] p-2 rounded-lg shrink-0 group-hover:bg-blue-800/40 transition">
                           {item.icon}
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-white">{item.label}</p>
-                          <p className="text-xs text-gray-500 mt-0.5">{item.detail}</p>
+                          <p className="text-xs text-[var(--text-muted)] mt-0.5">{item.detail}</p>
                         </div>
                       </li>
                     ))}
@@ -200,13 +200,13 @@ export default function Services() {
               </div>
 
               {/* Divider + CTA */}
-              <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row
+              <div className="mt-10 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row
                               items-start sm:items-center justify-between gap-5">
                 <div>
                   <p className="text-sm font-semibold text-white mb-1">
                     Interested in working with NAK-Digital?
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-[var(--text-muted)]">
                     We&apos;re onboarding early clients before the official launch.
                   </p>
                 </div>
@@ -221,7 +221,7 @@ export default function Services() {
                   <a
                     href="#"
                     className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white
-                               text-sm font-medium px-6 py-3 rounded-xl border border-white/10 transition"
+                               text-sm font-medium px-6 py-3 rounded-xl border border-[var(--border)] transition"
                   >
                     Learn More
                   </a>
@@ -234,9 +234,9 @@ export default function Services() {
 
         {/* ── Bottom CTA ── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pb-24 text-center">
-          <div className="bg-[#050941] rounded-2xl p-10 border border-blue-900/30">
+          <div className="bg-[var(--bg-card)] rounded-2xl p-10 border border-[var(--border)]">
             <h2 className="text-2xl sm:text-3xl font-bold mb-3">Ready to work together?</h2>
-            <p className="text-gray-400 mb-6 max-w-md mx-auto text-sm sm:text-base">
+            <p className="text-[var(--text-muted)] mb-6 max-w-md mx-auto text-sm sm:text-base">
               Whether it&apos;s a new website, a Shopify store, or Meta ads — let&apos;s build something great.
             </p>
             <Link
@@ -254,3 +254,4 @@ export default function Services() {
     </>
   );
 }
+
