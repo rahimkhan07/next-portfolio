@@ -159,8 +159,11 @@ export default function GalleryPage() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
 
-              {/* overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
+              {/* default dark overlay — 50% black, removed on hover */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/0 transition-all duration-300" />
+
+              {/* caption overlay — visible on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
                 <p className="text-white text-[10px] sm:text-xs font-semibold leading-tight line-clamp-1">
                   {photo.caption}
                 </p>
