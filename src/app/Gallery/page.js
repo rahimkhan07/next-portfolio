@@ -123,6 +123,80 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      {/* ── Currently Reading ── */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 pb-6">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-lg">📚</span>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-[var(--text-muted)]">Currently Reading</h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Book 1 */}
+          <div className="group flex gap-4 bg-[var(--bg-card)] border border-[var(--border)] rounded-2xl p-4 hover:border-blue-500/50 hover:shadow-md hover:shadow-blue-500/10 transition-all duration-300">
+            <div className="relative shrink-0 w-16 h-24 rounded-xl overflow-hidden shadow-lg shadow-black/30">
+              <img
+                src="https://m.media-amazon.com/images/I/61x6M3iMBWL._SY522_.jpg"
+                alt="The Untouchables"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              {/* Reading badge */}
+              <div className="absolute top-1 left-1 bg-blue-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full">
+                READING
+              </div>
+            </div>
+            <div className="flex flex-col justify-between min-w-0">
+              <div>
+                <p className="text-xs text-blue-400 font-semibold uppercase tracking-widest mb-1">Political History</p>
+                <h3 className="text-sm font-bold text-[var(--text-primary)] leading-snug mb-1">
+                  The Untouchables: Who Were They and Why They Became Untouchables?
+                </h3>
+                <p className="text-xs text-[var(--text-muted)]">B.R. Ambedkar</p>
+              </div>
+              {/* Progress bar */}
+              <div className="mt-3">
+                <div className="flex justify-between text-[10px] text-[var(--text-muted)] mb-1">
+                  <span>Progress</span><span>45%</span>
+                </div>
+                <div className="w-full bg-[var(--bg-card2)] rounded-full h-1.5">
+                  <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: "45%" }} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Book 2 */}
+          <div className="group flex gap-4 bg-[var(--bg-card)] border border-[var(--border)] rounded-2xl p-4 hover:border-amber-500/50 hover:shadow-md hover:shadow-amber-500/10 transition-all duration-300">
+            <div className="relative shrink-0 w-16 h-24 rounded-xl overflow-hidden shadow-lg shadow-black/30">
+              <img
+                src="https://m.media-amazon.com/images/I/81RKbkxGvOL._SY522_.jpg"
+                alt="Ottoman Empire"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-1 left-1 bg-amber-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full">
+                READING
+              </div>
+            </div>
+            <div className="flex flex-col justify-between min-w-0">
+              <div>
+                <p className="text-xs text-amber-400 font-semibold uppercase tracking-widest mb-1">World History</p>
+                <h3 className="text-sm font-bold text-[var(--text-primary)] leading-snug mb-1">
+                  The Ottoman Empire: The Rise and Fall of the Islamic Empire
+                </h3>
+                <p className="text-xs text-[var(--text-muted)]">History Series</p>
+              </div>
+              <div className="mt-3">
+                <div className="flex justify-between text-[10px] text-[var(--text-muted)] mb-1">
+                  <span>Progress</span><span>30%</span>
+                </div>
+                <div className="w-full bg-[var(--bg-card2)] rounded-full h-1.5">
+                  <div className="bg-amber-500 h-1.5 rounded-full" style={{ width: "30%" }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Category Filter ── */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 pb-6">
         <div className="flex flex-wrap justify-center gap-2">
